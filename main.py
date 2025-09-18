@@ -8,6 +8,11 @@ import imutils
 
 app = FastAPI()
 
+@app.get("/healthz")
+async def healthz():
+    return {"status": "ok"}
+
+
 @app.get("/")
 def root():
     return {"message": "OCR Service with crop support is running"}
